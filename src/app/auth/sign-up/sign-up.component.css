@@ -1,0 +1,82 @@
+#signup {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.5);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 450px;
+  margin-top: -20px;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup h1 {
+  padding: 25px;
+  font-weight: bolder;
+}
+
+.signup-form span {
+  margin-top: 3px;
+  font-size: 14px;
+  margin-left: -1px;
+  align-self: flex-start;
+  color: slateblue;
+}
+
+.form-group label {
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  background-color: white;
+  padding: 0 9px;
+  color: slateblue;
+}
+
+.signup-form input {
+  border: 2px solid slateblue;
+  width: 100%;
+  border-radius: 3px;
+  padding: 20px 15px;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #fff;
+  color: slateblue;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.btn-container {
+  display: flex;
+  width: 57%;
+  align-self: flex-end;
+  margin-top: 30px;
+}
+
+.btn-finish {
+}
+
+.btn-cancel {
+  margin-left: auto;
+  margin-right: 58px;
+}
