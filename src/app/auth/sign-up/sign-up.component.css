@@ -1,18 +1,24 @@
 #signup {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-purple);
 }
 
 .signup-form {
+  background-color: #fff;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 550px;
-  height: 450px;
-  margin-top: -20px;
-  padding-bottom: 10px;
+  height: 550px;
+  margin-top: -15px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.5);
 }
 
 .form-group {
@@ -26,44 +32,53 @@
 }
 
 #signup h1 {
-  padding: 25px;
+  /* padding: 25px; */
   font-weight: bolder;
+  align-self: flex-start;
+
+  position: absolute;
+  top: 15px;
+  left: 30px;
 }
 
 .signup-form span {
   margin-top: 3px;
   font-size: 14px;
-  margin-left: -1px;
+  margin-left: 19px;
   align-self: flex-start;
-  color: slateblue;
+  color: var(--main-purple);
+}
+
+.name-form-group {
+  margin-top: 75px;
 }
 
 .form-group label {
   position: absolute;
   top: -10px;
-  left: -6px;
+  left: 12px;
   background-color: white;
   padding: 0 9px;
-  color: slateblue;
+  color: var(--main-purple);
 }
 
 .signup-form input {
-  border: 2px solid slateblue;
+  border: 2px solid var(--main-purple);
   width: 100%;
-  border-radius: 3px;
-  padding: 20px 15px;
+  border-radius: 5px;
+  padding: 20px 18px;
   font-size: 24px;
 }
 
 .btn {
   background-color: #fff;
-  color: slateblue;
+  color: var(--main-purple);
   border: none;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: -20px;
   font-size: 16px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .btn-container {
@@ -71,9 +86,6 @@
   width: 57%;
   align-self: flex-end;
   margin-top: 30px;
-}
-
-.btn-finish {
 }
 
 .btn-cancel {
