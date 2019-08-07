@@ -1,12 +1,37 @@
 <section id="dashboard">
   <header>
+    <mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <div class="pic-container">
+      <mat-icon class="account-pic">account_circle</mat-icon>
+    </div>
+    <p class="name">Jane Smith</p>
+    <p class="email">Jane@gmail.com</p>
+    <hr />
+    <div class="links-container">
+      <ul class="top-links">
+        <li><mat-icon>folder</mat-icon><a href="#">My Files</a></li>
+        <li><mat-icon>folder_shared</mat-icon><a href="#">Files I'm Sharing</a></li>
+        <li><mat-icon>folder_special</mat-icon><a href="#">Files Shared With Me</a></li>
+      </ul>
+      <ul class="bottom-links">
+        <li><mat-icon>cloud_upload</mat-icon><a href="#">Upload File</a></li>
+        <li><mat-icon>exit_to_app</mat-icon><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button class="menu-icon" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
     <div class="headline">
       Welcome Jane Smith
     </div>
     <div class="header-icons">
       <mat-icon>search</mat-icon>
-      <mat-icon>open_in_new</mat-icon>
+      <mat-icon>exit_to_app</mat-icon>
     </div>
+    
   </header>
 
   <div class="files-container">

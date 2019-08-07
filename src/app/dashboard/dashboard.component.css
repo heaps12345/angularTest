@@ -7,6 +7,14 @@
   flex-direction: column;
 }
 
+.pagination {
+  margin: 25px 0;
+  width: 100%;
+  color: gray;
+}
+
+/*  HEADER  */
+
 #dashboard header {
   background-color: var(--main-purple);
   width: 100%;
@@ -15,6 +23,7 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+  position: relative;
 }
 
 .headline {
@@ -30,12 +39,147 @@
   cursor: pointer;
 }
 
+/******* SIDE NAV *************/
+
+mat-sidenav-container {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 460px;
+  background-color: transparent;
+}
+
+mat-sidenav {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-sidenav ul {
+  padding: 0;
+  padding-left: 20px;
+}
+
+mat-sidenav ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+mat-sidenav ul li a {
+  text-decoration: none;
+  width: 78%;
+  position: relative;
+}
+
+mat-sidenav ul li a:hover {
+  color: var(--main-purple);
+  /* border-bottom: 2px solid #e1e1e1; */
+}
+
+ul mat-icon {
+  font-size: 30px;
+  margin-right: 48px;
+}
+
+.account-pic {
+  padding: 15px 0 15px 20px;
+
+  font-size: 65px;
+  position: absolute;
+  top: -21px;
+  left: -26px;
+  color: #e1e1e1;
+}
+
+.pic-container {
+  background-color: #bcbcbc;
+  position: relative;
+  border-radius: 50%;
+  height: 53px;
+  width: 50px;
+  top: 25px;
+  margin-left: 20px;
+}
+
+.links-container {
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+
+.top-links li a {
+  color: gray;
+}
+
+ul li a:hover:after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  border-bottom: 2px solid #e1e1e1;
+  top: 20px;
+  position: absolute;
+}
+
+.bottom-links li a {
+  color: #000;
+}
+
+mat-sidenav {
+  line-height: 0.25;
+}
+
+.name {
+  font-size: 27px;
+  font-weight: 600;
+  padding-left: 20px;
+  margin-top: 63px;
+}
+
+.email {
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+mat-sidenav hr {
+  margin: 40px 0;
+  background-color: #e1e1e1;
+  height: 2px;
+  border: 0;
+}
+
+.menu-icon {
+  color: #fff;
+  position: absolute;
+  top: 18px;
+  left: 24px;
+}
+
+/*  DASHBOARD CARDS  */
+
+.files-container {
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  padding-left: 50px;
+}
+
 .dashboard-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 400px;
   padding: 45px 25px 15px;
   border: 1px solid #e1e1e1;
   margin-right: 25px;
@@ -87,19 +231,6 @@
   font-size: 16px;
   color: gray;
   padding-left: 5px;
-}
-
-.files-container {
-  display: flex;
-  align-self: flex-start;
-  flex-wrap: wrap;
-  padding-left: 50px;
-}
-
-.pagination {
-  margin: 25px 0;
-  width: 100%;
-  color: gray;
 }
 
 .dashboard-icons-container {
