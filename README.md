@@ -9,8 +9,6 @@ An assignment to test my Angular an overall web development knowledge.
 3. `npm install`.
 4. Run `ng serve` for a dev server.
 5. Navigate to `http://localhost:4200/`.
-  
-
 
 ## Fully Implemented Features
 
@@ -28,16 +26,15 @@ users can logout by clicking the button in the upper right corner or the 'logout
 
 ## Partially Implemented Features
 
-All the designs are implemented except the file input button and some of the icons 
+All the designs are implemented except the file input button and some of the icons
 changed because I thought they be fine replacements in the Google Material Icons.
 
 showing the users email and name in the header and side nav.
 
+displaying number of files or folders.
 
 ## Not Implemented Features
-
 
 Anything to do with sharing files.
 
 Downloading the files.
-

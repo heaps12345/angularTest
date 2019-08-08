@@ -15,4 +15,4 @@ Wednesday 8/7 -
 
 Thursday 8/8 -
 
- 9am – 530pm: added firebase auth & firestore
+ 9am – 6pm: added firebase auth & firestore
