@@ -1,106 +1,111 @@
 <section id="dashboard">
   <header>
     <mat-sidenav-container>
-  <mat-sidenav #sidenav>
-    <div class="pic-container">
-      <mat-icon class="account-pic">account_circle</mat-icon>
-    </div>
-    <p class="name">Jane Smith</p>
-    <p class="email">Jane@gmail.com</p>
-    <hr />
-    <div class="links-container">
-      <ul class="top-links">
-        <li><mat-icon>folder</mat-icon><a href="#">My Files</a></li>
-        <li><mat-icon>folder_shared</mat-icon><a href="#">Files I'm Sharing</a></li>
-        <li><mat-icon>folder_special</mat-icon><a href="#">Files Shared With Me</a></li>
-      </ul>
-      <ul class="bottom-links">
-        <li><mat-icon>cloud_upload</mat-icon><a href="#">Upload File</a></li>
-        <li><mat-icon>exit_to_app</mat-icon><a href="#">Logout</a></li>
-      </ul>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <button class="menu-icon" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      <mat-sidenav #sidenav>
+        <div class="pic-container">
+          <mat-icon class="account-pic">account_circle</mat-icon>
+        </div>
+        <p class="name">Jane Smith</p>
+        <p class="email">Jane@gmail.com</p>
+        <hr />
+        <div class="links-container">
+          <ul class="top-links">
+            <li><mat-icon>folder</mat-icon><a href="#">My Files</a></li>
+            <li><mat-icon>folder_shared</mat-icon><a href="#">Files I'm Sharing</a></li>
+            <li><mat-icon>folder_special</mat-icon><a href="#">Files Shared With Me</a></li>
+          </ul>
+          <ul class="bottom-links">
+            <li><mat-icon>cloud_upload</mat-icon><a href="#">Upload File</a></li>
+            <li><mat-icon>exit_to_app</mat-icon><a (click)="onLogout()">Logout</a></li>
+          </ul>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <button class="menu-icon" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
     <div class="headline">
       Welcome Jane Smith
     </div>
     <div class="header-icons">
       <mat-icon>search</mat-icon>
-      <mat-icon>exit_to_app</mat-icon>
+      <mat-icon (click)="onLogout()">exit_to_app</mat-icon>
     </div>
-    
   </header>
 
   <div class="files-container">
     <div class="pagination">
       My Files | My Folder | My Subfolder
     </div>
-    <mat-card class="dashboard-card">
+    <mat-card *ngFor="let folder of folders | async" class="dashboard-card">
       <div class="card-top">
         <div class="card-info">
-          <mat-card-title>Folder Name</mat-card-title>
-          <mat-card-content>2 Folders, 4 files</mat-card-content>
+          <mat-card-title>{{ folder.foldername }}</mat-card-title>
+          <mat-card-content>{{ folders.length }} files</mat-card-content>
         </div>
         <mat-icon class="card-icon">folder</mat-icon>
       </div>
       <div class="card-bottom">
         <button mat-button>Open</button>
-        <button mat-button>Share</button>
+        <button mat-button (click)="openShareModal()">Share</button>
         <button mat-button>Delete</button>
       </div>
     </mat-card>
-    <mat-card class="dashboard-card">
+    <mat-card *ngFor="let file of files | async" class="dashboard-card">
       <div class="card-top">
         <div class="card-info">
-          <mat-card-title>Folder Name</mat-card-title>
-          <mat-card-content>2 Folders, 4 files</mat-card-content>
+          <mat-card-title>{{ file.filename }}</mat-card-title>
+          <mat-card-content>Added on {{ file.dateAdded }}</mat-card-content>
         </div>
-        <mat-icon class="card-icon">folder</mat-icon>
+        <mat-icon class="card-icon">description</mat-icon>
       </div>
       <div class="card-bottom">
-        <button mat-button>Open</button>
-        <button mat-button>Share</button>
-        <button mat-button>Delete</button>
-      </div>
-    </mat-card>
-    <mat-card class="dashboard-card">
-      <div class="card-top">
-        <div class="card-info">
-          <mat-card-title>Folder Name</mat-card-title>
-          <mat-card-content>2 Folders, 4 files</mat-card-content>
-        </div>
-        <mat-icon class="card-icon">folder</mat-icon>
-      </div>
-      <div class="card-bottom">
-        <button mat-button>Open</button>
-        <button mat-button>Share</button>
-        <button mat-button>Delete</button>
-      </div>
-    </mat-card>
-    <mat-card class="dashboard-card">
-      <div class="card-top">
-        <div class="card-info">
-          <mat-card-title>Folder Name</mat-card-title>
-          <mat-card-content>2 Folders, 4 files</mat-card-content>
-        </div>
-        <mat-icon class="card-icon">folder</mat-icon>
-      </div>
-      <div class="card-bottom">
-        <button mat-button>Open</button>
-        <button mat-button>Share</button>
-        <button mat-button>Delete</button>
+        <button mat-button download>Open</button>
+        <button mat-button (click)="openShareModal()">Share</button>
+        <button mat-button (click)="deleteFile(file)">Delete</button>
       </div>
     </mat-card>
   </div>
   <div class="dashboard-icons-container">
     <div class="icon-bg">
-      <mat-icon class="dashboard-icon">create_new_folder</mat-icon>
+      <mat-icon (click)="addFolder()" class="dashboard-icon">create_new_folder</mat-icon>
     </div>
     <div class="icon-bg">
-      <mat-icon class="dashboard-icon">backup</mat-icon>
+      <mat-icon (click)="openUploadModal()" class="dashboard-icon">backup</mat-icon>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="upload-modal-overlay">
+    <div class="modal">
+      <p>Upload File</p>
+
+      <div class="modal-form-group">
+        <form action="" class="signin-form" #f="ngForm" (ngSubmit)="addFile(f)">
+          <label class="modal-label">Name</label>
+          <input class="modal-input" type="file" ngModel name="filename" />
+          <span>Click arrow to browse for file</span>
+          <div class="modal-btn-container">
+            <button class="modal-btn modal-btn-submit" type="submit">upload</button>
+            <button class="modal-btn" type="button" (click)="closeUploadModal()">cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-overlay" id="share-modal-overlay">
+    <div class="modal">
+      <p>Share File Name</p>
+
+      <div class="share-form-group">
+        <form action="" class="signin-form">
+          <label class="share-modal-label">Email</label>
+          <input class="modal-input" type="text" ngModel name="filename" />
+          <div class="share-btn-container">
+            <button class="modal-btn modal-btn-submit" type="submit">share</button>
+            <button class="modal-btn" type="button" (click)="closeShareModal()">cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>

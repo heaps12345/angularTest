@@ -72,6 +72,7 @@ mat-sidenav ul li a {
   text-decoration: none;
   width: 78%;
   position: relative;
+  cursor: pointer;
 }
 
 mat-sidenav ul li a:hover {
@@ -179,7 +180,7 @@ mat-sidenav hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 390px;
   padding: 45px 25px 15px;
   border: 1px solid #e1e1e1;
   margin-right: 25px;
@@ -230,7 +231,6 @@ mat-sidenav hr {
 .mat-card-content {
   font-size: 16px;
   color: gray;
-  padding-left: 5px;
 }
 
 .dashboard-icons-container {
@@ -256,3 +256,138 @@ mat-sidenav hr {
   display: table;
   cursor: pointer;
 }
+
+/************   MODAL  ********************/
+
+.modal-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.modal {
+  height: 300px;
+  width: 550px;
+  background-color: #fff;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalOpen {
+  display: block;
+}
+
+.modal-form-group {
+  position: relative;
+  margin-bottom: 30px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 117%;
+}
+
+.modal-input {
+  border: 2px solid var(--main-purple);
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px 18px;
+  font-size: 24px;
+}
+
+.modal-form-group span {
+  margin-top: 3px;
+  font-size: 14px;
+  margin-left: 19px;
+  align-self: flex-start;
+  color: var(--main-purple);
+}
+
+.modal-label {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  background-color: white;
+  padding: 0 9px;
+  color: var(--main-purple);
+}
+
+.modal-btn {
+  background-color: #fff;
+  color: var(--main-purple);
+  border: none;
+  cursor: pointer;
+  margin-bottom: -53px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.modal-btn-container {
+  display: flex;
+  width: 100%;
+  align-self: flex-end;
+  margin-top: 30px;
+}
+
+.modal-btn-submit {
+  margin-right: auto;
+  margin-left: 150px;
+}
+
+.modal p {
+  font-size: 24px;
+  font-weight: 600;
+  margin-left: 31px;
+  width: 94%;
+}
+
+.share-form-group {
+  position: relative;
+  margin-bottom: 30px;
+  width: 75%;
+  margin-top: 37px;
+}
+.share-btn-container {
+  display: flex;
+  width: 100%;
+  align-self: flex-end;
+  margin-top: 57px;
+}
+.share-modal-label {
+  position: absolute;
+  top: -11px;
+  left: 12px;
+  background-color: white;
+  padding: 0 9px;
+  color: var(--main-purple);
+}
+/* .btn-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border: 3px var(--main-purple) solid;
+  height: 67px;
+  width: 300px;
+}
+
+
+.btn-container input[type='file'] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+} */

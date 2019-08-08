@@ -1,23 +1,23 @@
 <section id="signup">
-  <form action="" class="signup-form">
+  <form action="" class="signup-form" #f="ngForm" (ngSubmit)="onSubmitSignUp(f)">
     <h1>Sign Up</h1>
     <div class="form-group name-form-group">
       <label>Name</label>
-      <input type="text" matInput />
+      <input type="text" matInput ngModel name="name" />
       <span>Your Name</span>
     </div>
     <div class="form-group">
       <label>Email</label>
-      <input type="email" matInput />
+      <input type="email" matInput ngModel name="email" />
       <span>Your Email Address</span>
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" matInput />
+      <input type="password" matInput ngModel name="password" />
       <span>Password must contain a digit and a symbol</span>
     </div>
     <div class="btn-container">
-      <button class="btn btn-finish" mat-button>FINISH</button>
+      <button type="submit" class="btn btn-finish" mat-button>FINISH</button>
       <button class="btn btn-cancel" mat-button>CANCEL</button>
     </div>
   </form>
