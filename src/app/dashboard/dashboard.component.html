@@ -15,7 +15,7 @@
             <li><mat-icon>folder_special</mat-icon><a href="#">Files Shared With Me</a></li>
           </ul>
           <ul class="bottom-links">
-            <li><mat-icon>cloud_upload</mat-icon><a href="#">Upload File</a></li>
+            <li><mat-icon>cloud_upload</mat-icon><a (click)="openUploadModal()">Upload File</a></li>
             <li><mat-icon>exit_to_app</mat-icon><a (click)="onLogout()">Logout</a></li>
           </ul>
         </div>
@@ -48,7 +48,7 @@
       <div class="card-bottom">
         <button mat-button>Open</button>
         <button mat-button (click)="openShareModal()">Share</button>
-        <button mat-button>Delete</button>
+        <button mat-button (click)="deleteFolder(folder)">Delete</button>
       </div>
     </mat-card>
     <mat-card *ngFor="let file of files | async" class="dashboard-card">

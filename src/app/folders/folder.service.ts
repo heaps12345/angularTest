@@ -1,16 +1,8 @@
-import { Folder } from './folder.model';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class FolderService {
-  MyFolders: Folder[] = [
-    { id: 1, foldername: 'folder 1' },
-    { id: 2, foldername: 'folder 2' },
-    { id: 3, foldername: 'folder 3' },
-    { id: 4, foldername: 'folder 4' }
-  ];
-
   constructor(private db: AngularFirestore) {}
 
   getMyFolders() {
@@ -18,10 +10,17 @@ export class FolderService {
   }
 
   addFolder() {
-    
-    this.addFolderToDB({ foldername: 'new folder' });
+    this.addFolderToDB({ foldername: 'Folder Name' });
     this.getMyFolders();
-    console.log(this.MyFolders);
+  }
+
+  deleteFolder(folderToRemove) {
+    this.db
+      .collection('myFolders')
+      .doc(`${folderToRemove.id}`)
+      .delete();
+
+    this.getMyFolders();
   }
 
   private addFolderToDB(folder) {

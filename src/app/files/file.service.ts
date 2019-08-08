@@ -1,17 +1,9 @@
-import { File } from './file.model';
-import moment from 'moment';
+var moment = require('moment');
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class FileService {
-  myFiles: File[] = [
-    { id: 1, filename: 'file 1' },
-    { id: 2, filename: 'file 2' },
-    { id: 3, filename: 'file 3' },
-    { id: 4, filename: 'file 4' }
-  ];
-
   constructor(private db: AngularFirestore) {}
 
   getMyFiles() {
@@ -33,13 +25,15 @@ export class FileService {
     });
 
     this.getMyFiles();
-    console.log(this.myFiles);
   }
 
   deleteFile(fileToRemove) {
-    this.myFiles.filter(file => file !== fileToRemove);
+    this.db
+      .collection('myFiles')
+      .doc(`${fileToRemove.id}`)
+      .delete();
+
     this.getMyFiles();
-    console.log(this.myFiles);
   }
 
   private addFileToDB(file) {

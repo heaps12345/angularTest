@@ -18,6 +18,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         console.log(result);
+        
         this.authChange.next(true);
         this.router.navigate(['/dashboard']);
       })

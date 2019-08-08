@@ -13,8 +13,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './auth/auth.service';
-import { FileService } from './auth/file.service';
-import { FolderService } from './auth/folder.service';
+import { FileService } from './files/file.service';
+import { FolderService } from './folders/folder.service';
 import { environment } from '../environments/environment';
 
 @NgModule({

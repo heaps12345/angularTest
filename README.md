@@ -1,27 +1,43 @@
-# AngularTest
+# Angular-Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+An assignment to test my Angular an overall web development knowledge.
 
-## Development server
+## Starting Up The App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Clone the repo.
+2. `cd angularTest`.
+3. `npm install`.
+4. Run `ng serve` for a dev server.
+5. Navigate to `http://localhost:4200/`.
+  
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Fully Implemented Features
 
-## Build
+Signing Up Users.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Signing In Users.
 
-## Running unit tests
+users can create files and upload folders using the buttons in the lower right corner.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+users can delete files/folders by clicking the 'delete' button.
 
-## Running end-to-end tests
+users can see the files/folders by navigating to '/dashboard'.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+users can logout by clicking the button in the upper right corner or the 'logout' button in the side nav.
 
-## Further help
+## Partially Implemented Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+All the designs are implemented except the file input button and some of the icons 
+changed because I thought they be fine replacements in the Google Material Icons.
+
+showing the users email and name in the header and side nav.
+
+
+## Not Implemented Features
+
+
+Anything to do with sharing files.
+
+Downloading the files.
+
